@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14468168361820" configfile="/Red_Social/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf16044967562002" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16044967562003 pf16044967562004 pf16044967562005 pf16044967562006 pf16044967562007 pf16044967562008 pf16044967562009 pf160449675620010 pf160449675620011 pf160449675620012 pf160449675620013 pf160449675620014 pf160449675620015 pf160449675620016 pf160449675620017" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="error.xhtml" id="pf160449675620018" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16044967562003" path="/error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf160449675620019" referenceLink="//@navigationRule.5/@navigationCase.3/@toViewId|" outlinks="pf160449675620020 pf160449675620021 pf160449675620022 pf160449675620023" inlinks="pf16044967562004 pf16044967562005 pf16044967562006 pf160449675620016 pf160449675620022 pf160449675620024" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/crearPublicacion.xhtml" id="pf160449675620025" referenceLink="//@navigationRule.1/@navigationCase.4/@toViewId|" inlinks="pf16044967562007" path="/usuarios/crearPublicacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/borrarUsuario.xhtml" id="pf160449675620026" referenceLink="//@navigationRule.1/@navigationCase.10/@toViewId|" inlinks="pf16044967562008 pf160449675620013" path="/admin/borrarUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/publicacionesPropias.xhtml" id="pf160449675620027" referenceLink="//@navigationRule.1/@navigationCase.7/@toViewId|" inlinks="pf16044967562009 pf160449675620010 pf160449675620028" path="/usuarios/publicacionesPropias.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/copiarPublicacion.xhtml" id="pf160449675620029" referenceLink="//@navigationRule.1/@navigationCase.8/@toViewId|" outlinks="pf160449675620028" inlinks="pf160449675620011" path="/usuarios/copiarPublicacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/publicacionesAmigos.xhtml" id="pf160449675620030" referenceLink="//@navigationRule.1/@navigationCase.9/@toViewId|" inlinks="pf160449675620012" path="/usuarios/publicacionesAmigos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/enviarInvitacion.xhtml" id="pf160449675620031" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf160449675620032" inlinks="pf160449675620014 pf160449675620032" path="/usuarios/enviarInvitacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/aceptarInvitacion.xhtml" id="pf160449675620033" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf160449675620034" inlinks="pf160449675620015 pf160449675620034" path="/usuarios/aceptarInvitacion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/opcionesUsuarios.xhtml" id="pf160449675620035" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf160449675620017 pf160449675620021 pf160449675620036 pf160449675620037" path="/usuarios/opcionesUsuarios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/opcionesAdmin.xhtml" id="pf160449675620038" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf160449675620020 pf160449675620139 pf160449675620140" path="/admin/opcionesAdmin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="opcionesRegistro.xhtml" id="pf160449675620141" referenceLink="//@navigationRule.5/@navigationCase.4/@toViewId|" outlinks="pf160449675620139 pf160449675620036 pf160449675620142 pf160449675620024 pf160449675620143" inlinks="pf160449675620023 pf160449675620142 pf160449675620143" path="/opcionesRegistro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios/*" id="pf160449675620144" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf160449675620037" path="/usuarios/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/*" id="pf160449675620145" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf160449675620140" path="/admin/*"/>
+  <links id="pf16044967562003" target="pf160449675620018" source="pf16044967562002" outcome="error"/>
+  <links id="pf16044967562004" target="pf160449675620019" source="pf16044967562002" outcome="login"/>
+  <links id="pf16044967562005" target="pf160449675620019" source="pf16044967562002" outcome="CIERRASESION"/>
+  <links id="pf16044967562006" target="pf160449675620019" source="pf16044967562002" outcome="success" fromaction="#{login.logout()}"/>
+  <links id="pf16044967562007" target="pf160449675620025" source="pf16044967562002" outcome="publicar"/>
+  <links id="pf16044967562008" target="pf160449675620026" source="pf16044967562002" outcome="borrarUsers"/>
+  <links id="pf16044967562009" target="pf160449675620027" source="pf16044967562002" outcome="exito" fromaction="#{publicaciones.listadoPropias('TITULO')}"/>
+  <links id="pf160449675620010" target="pf160449675620027" source="pf16044967562002" outcome="exito" fromaction="#{publicaciones.listadoPropias('FECHA')}"/>
+  <links id="pf160449675620011" target="pf160449675620029" source="pf16044967562002" outcome="exito" fromaction="#{publicaciones.copiaModificada(vpubli)}"/>
+  <links id="pf160449675620012" target="pf160449675620030" source="pf16044967562002" outcome="exito" fromaction="#{publicaciones.listadoAmigos}"/>
+  <links id="pf160449675620013" target="pf160449675620026" source="pf16044967562002" outcome="exito" fromaction="#{admin.borrarUsuarios}"/>
+  <links id="pf160449675620014" target="pf160449675620031" source="pf16044967562002" outcome="exito" fromaction="#{usuarios.listadoEnvios}"/>
+  <links id="pf160449675620015" target="pf160449675620033" source="pf16044967562002" outcome="exito" fromaction="#{usuarios.listadoPeticiones}"/>
+  <links id="pf160449675620016" target="pf160449675620019" source="pf16044967562002" outcome="exito" fromaction="#{admin.reiniciarBD}"/>
+  <links id="pf160449675620017" target="pf160449675620035" source="pf16044967562002" outcome="exito" fromaction="#{publicaciones.salva}"/>
+  <links id="pf160449675620034" target="pf160449675620033" source="pf160449675620033" outcome="exito" fromaction="#{amigosLista.aceptarAmigo(sesion.email, vamigo)}"/>
+  <links id="pf160449675620032" target="pf160449675620031" source="pf160449675620031" outcome="exito" fromaction="#{amigosLista.agregarAmigo(sesion.email, vusuario)}"/>
+  <links id="pf160449675620020" target="pf160449675620038" source="pf160449675620019" outcome="successAdmin" fromaction="#{login.verify}"/>
+  <links id="pf160449675620021" target="pf160449675620035" source="pf160449675620019" outcome="successUsuarios" fromaction="#{login.verify}"/>
+  <links id="pf160449675620022" target="pf160449675620019" source="pf160449675620019" outcome="login" fromaction="#{login.verify}"/>
+  <links id="pf160449675620023" target="pf160449675620141" source="pf160449675620019" outcome="Registro"/>
+  <links id="pf160449675620139" target="pf160449675620038" source="pf160449675620141" outcome="successAdmin" fromaction="#{login.registry}"/>
+  <links id="pf160449675620036" target="pf160449675620035" source="pf160449675620141" outcome="successUsuarios" fromaction="#{login.registry}"/>
+  <links id="pf160449675620142" target="pf160449675620141" source="pf160449675620141" outcome="login" fromaction="#{login.registry}"/>
+  <links id="pf160449675620024" target="pf160449675620019" source="pf160449675620141" outcome="IniciarSesion"/>
+  <links id="pf160449675620143" target="pf160449675620141" source="pf160449675620141" outcome="existente"/>
+  <links id="pf160449675620037" target="pf160449675620035" source="pf160449675620144" outcome="casa"/>
+  <links id="pf160449675620140" target="pf160449675620038" source="pf160449675620145" outcome="casa"/>
+  <links id="pf160449675620028" target="pf160449675620027" source="pf160449675620029" outcome="exito" fromaction="#{publicaciones.salvaCopia}"/>
+</pageflow:Pageflow>

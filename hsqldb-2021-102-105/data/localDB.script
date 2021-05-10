@@ -1,0 +1,109 @@
+SET DATABASE UNIQUE NAME HSQLDB4859984B85
+SET DATABASE GC 0
+SET DATABASE DEFAULT RESULT MEMORY ROWS 0
+SET DATABASE EVENT LOG LEVEL 0
+SET DATABASE SQL NAMES FALSE
+SET DATABASE SQL REGULAR NAMES TRUE
+SET DATABASE SQL REFERENCES FALSE
+SET DATABASE SQL SIZE FALSE
+SET DATABASE SQL TYPES FALSE
+SET DATABASE SQL TDC DELETE TRUE
+SET DATABASE SQL TDC UPDATE TRUE
+SET DATABASE SQL TRANSLATE TTI TYPES TRUE
+SET DATABASE SQL CONCAT NULLS TRUE
+SET DATABASE SQL NULLS FIRST TRUE
+SET DATABASE SQL UNIQUE NULLS TRUE
+SET DATABASE SQL CONVERT TRUNCATE TRUE
+SET DATABASE SQL AVG SCALE 0
+SET DATABASE SQL DOUBLE NAN TRUE
+SET DATABASE SQL LONGVAR IS LOB FALSE
+SET DATABASE TRANSACTION CONTROL LOCKS
+SET DATABASE DEFAULT ISOLATION LEVEL READ COMMITTED
+SET DATABASE TRANSACTION ROLLBACK ON CONFLICT TRUE
+SET DATABASE TEXT TABLE DEFAULTS ''
+SET FILES WRITE DELAY 10
+SET FILES BACKUP INCREMENT FALSE
+SET FILES CACHE SIZE 10000
+SET FILES CACHE ROWS 50000
+SET FILES SCALE 1
+SET FILES LOB SCALE 32
+SET FILES DEFRAG 0
+SET FILES NIO TRUE
+SET FILES NIO SIZE 256
+SET FILES LOG TRUE
+SET FILES LOG SIZE 200
+CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+SET SCHEMA PUBLIC
+CREATE MEMORY TABLE PUBLIC.USUARIOS(EMAIL VARCHAR(100) PRIMARY KEY,PASSWD VARCHAR(100) NOT NULL,ROL VARCHAR(20) NOT NULL,NOMBRE VARCHAR(100) NOT NULL)
+CREATE MEMORY TABLE PUBLIC.PUBLICACION(ID INTEGER PRIMARY KEY,EMAIL VARCHAR(100) NOT NULL,TITULO VARCHAR(20) NOT NULL,TEXTO VARCHAR(300) NOT NULL,FECHA BIGINT NOT NULL,FOREIGN KEY(EMAIL) REFERENCES PUBLIC.USUARIOS(EMAIL))
+CREATE MEMORY TABLE PUBLIC.AMIGOS(EMAIL_USUARIO VARCHAR(100),EMAIL_AMIGO VARCHAR(100),ACEPTADA BOOLEAN NOT NULL,FOREIGN KEY(EMAIL_USUARIO) REFERENCES PUBLIC.USUARIOS(EMAIL),FOREIGN KEY(EMAIL_AMIGO) REFERENCES PUBLIC.USUARIOS(EMAIL))
+ALTER SEQUENCE SYSTEM_LOBS.LOB_ID RESTART WITH 1
+SET DATABASE DEFAULT INITIAL SCHEMA PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.YES_OR_NO TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CARDINAL_NUMBER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
+GRANT DBA TO SA
+SET SCHEMA PUBLIC
+INSERT INTO USUARIOS VALUES('admin@email.es','admin','admin','Administrador')
+INSERT INTO USUARIOS VALUES('user1@email.es','user1','usuario','Usuario_1')
+INSERT INTO USUARIOS VALUES('user2@email.es','user2','usuario','Usuario_2')
+INSERT INTO USUARIOS VALUES('user3@email.es','user3','usuario','Usuario_3')
+INSERT INTO USUARIOS VALUES('user4@email.es','user4','usuario','Usuario_4')
+INSERT INTO USUARIOS VALUES('user5@email.es','user5','usuario','Usuario_5')
+INSERT INTO USUARIOS VALUES('user6@email.es','user6','usuario','Usuario_6')
+INSERT INTO USUARIOS VALUES('user7@email.es','user7','usuario','Usuario_7')
+INSERT INTO USUARIOS VALUES('user8@email.es','user8','usuario','Usuario_8')
+INSERT INTO USUARIOS VALUES('user9@email.es','user9','usuario','Usuario_9')
+INSERT INTO PUBLICACION VALUES(1,'user1@email.es','Titulo1','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1612774130000)
+INSERT INTO PUBLICACION VALUES(2,'user1@email.es','Titulo2','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1664824530654)
+INSERT INTO PUBLICACION VALUES(3,'user1@email.es','Titulo3','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1546324530754)
+INSERT INTO PUBLICACION VALUES(4,'user2@email.es','Titulo4','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1604274136450)
+INSERT INTO PUBLICACION VALUES(5,'user2@email.es','Titulo5','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1564824536570)
+INSERT INTO PUBLICACION VALUES(6,'user2@email.es','Titulo6','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1306453306436)
+INSERT INTO PUBLICACION VALUES(7,'user3@email.es','Titulo7','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1565824530543)
+INSERT INTO PUBLICACION VALUES(8,'user3@email.es','Titulo8','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1504274133450)
+INSERT INTO PUBLICACION VALUES(9,'user3@email.es','Titulo8','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1530645335740)
+INSERT INTO PUBLICACION VALUES(10,'user4@email.es','Titulo10','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1530645334560)
+INSERT INTO PUBLICACION VALUES(11,'user4@email.es','Titulo11','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1541150934360)
+INSERT INTO PUBLICACION VALUES(12,'user4@email.es','Titulo12','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1564824530126)
+INSERT INTO PUBLICACION VALUES(13,'user5@email.es','Titulo13','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1564274130436)
+INSERT INTO PUBLICACION VALUES(14,'user5@email.es','Titulo14','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1541150930643)
+INSERT INTO PUBLICACION VALUES(15,'user5@email.es','Titulo15','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1565454530476)
+INSERT INTO PUBLICACION VALUES(16,'user6@email.es','Titulo16','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1504274130457)
+INSERT INTO PUBLICACION VALUES(17,'user6@email.es','Titulo17','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1530645330654)
+INSERT INTO PUBLICACION VALUES(18,'user6@email.es','Titulo18','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1541150976530)
+INSERT INTO PUBLICACION VALUES(19,'user7@email.es','Titulo19','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1564827654530)
+INSERT INTO PUBLICACION VALUES(20,'user7@email.es','Titulo20','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1541156783360)
+INSERT INTO PUBLICACION VALUES(21,'user7@email.es','Titulo21','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1504274138760)
+INSERT INTO PUBLICACION VALUES(22,'user8@email.es','Titulo22','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1541150789930)
+INSERT INTO PUBLICACION VALUES(23,'user8@email.es','Titulo23','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1570648765330)
+INSERT INTO PUBLICACION VALUES(24,'user8@email.es','Titulo24','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1504278794130)
+INSERT INTO PUBLICACION VALUES(25,'user9@email.es','Titulo25','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1541150870930)
+INSERT INTO PUBLICACION VALUES(26,'user9@email.es','Titulo26','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1530665330980)
+INSERT INTO PUBLICACION VALUES(27,'user9@email.es','Titulo27','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1573645339860)
+INSERT INTO PUBLICACION VALUES(180263,'user6@email.es','Titulo copia user 6','ProbandoProbandoProbandoProbandoProbandoProbandoProbandoProbandoProbandoProbandoProbandoProbando',1604498582000)
+INSERT INTO PUBLICACION VALUES(515941,'user1@email.es','Titulo PRUEBA COPIA','PROBANDO QUE FUNCIONA LA COPIA',1604496318000)
+INSERT INTO PUBLICACION VALUES(621922,'user1@email.es','Titulo PRUEBA COPIA','PROBANDO QUE FUNCIONA LA COPIA',1604497368000)
+INSERT INTO PUBLICACION VALUES(708257,'user1@email.es','Titulo prueba 2','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est ante, consequat nec risus quam.',1604496785000)
+INSERT INTO AMIGOS VALUES('user1@email.es','user2@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user1@email.es','user3@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user1@email.es','user4@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user2@email.es','user1@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user2@email.es','user3@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user2@email.es','user4@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user3@email.es','user4@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user4@email.es','user3@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user5@email.es','user6@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user5@email.es','user7@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user5@email.es','user8@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user6@email.es','user5@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user6@email.es','user7@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user6@email.es','user8@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user7@email.es','user8@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user8@email.es','user7@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user9@email.es','user1@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user9@email.es','user2@email.es',TRUE)
+INSERT INTO AMIGOS VALUES('user9@email.es','user3@email.es',TRUE)
